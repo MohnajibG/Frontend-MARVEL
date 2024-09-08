@@ -10,7 +10,6 @@ const ComicsModal = ({ search }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedComic, setSelectedComic] = useState(null);
   const [page, setPage] = useState(0);
-  setPage > 0;
   //Modal
   const openModal = (element) => {
     setSelectedComic(element);
@@ -47,6 +46,20 @@ const ComicsModal = ({ search }) => {
     </div>
   ) : (
     <main>
+      <div
+        className="pagination"
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          margin: "20px 0",
+        }}
+      >
+        {" "}
+        <button onClick={() => setPage(page - 1)}>-</button>
+        <p>{page}</p>
+        <button onClick={() => setPage(page + 1)}>+</button>
+      </div>
       <div className="comics">
         {data.map((comic) => {
           return (
@@ -88,19 +101,6 @@ const ComicsModal = ({ search }) => {
             </div>
           );
         })}
-      </div>
-      <div
-        className="pagination"
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          margin: "20px 0",
-        }}
-      >
-        <button onClick={() => setPage(page - 1)}>-</button>
-        <p>{page}</p>
-        <button onClick={() => setPage(page + 1)}>+</button>
       </div>
       ;
       <Modal element={selectedComic} onClose={closeModal} />

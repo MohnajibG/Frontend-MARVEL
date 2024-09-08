@@ -10,7 +10,7 @@ const Characters = ({ search }) => {
   const [isLoading, setIsLoading] = useState(true);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedCharacter, setSelectedCharacter] = useState(null);
-  const [page, setPage] = useState(1);
+  const [page, setPage] = useState(0);
 
   const openModal = (character) => {
     setSelectedCharacter(character);
@@ -21,13 +21,20 @@ const Characters = ({ search }) => {
     setIsModalOpen(false);
     setSelectedCharacter(null);
   };
-
+  // const handleChangePage = (direction) => {
+  //   if (direction === "prev" && page > 1) {
+  //     setPage(page - 1);
+  //   } else if (direction === "next") {
+  //     setPage(page + 1);
+  //   }
+  // };
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `http://site--backend-marvel--dnxhn8mdblq5.code.run/characters?name=${search}&page=${page}`
+          `https://site--backend-marvel--dnxhn8mdblq5.code.run/character?name=${search}&page=${page}`
         );
+        console.log(response.data);
         setData(response.data.results);
         setIsLoading(false);
       } catch (error) {
@@ -35,7 +42,7 @@ const Characters = ({ search }) => {
       }
     };
     fetchData();
-  }, [search, page]);
+  }, [search]);
 
   return isLoading ? (
     <div className="loading">
@@ -47,7 +54,7 @@ const Characters = ({ search }) => {
     <main>
       <div className="characters">
         {data.map((personnage) => (
-          <div className="character" key={personnage.id}>
+          <div className="character" key={personnage._id}>
             <Link className="no-decoration" to={`/comics/${personnage._id}`}>
               <h3>{personnage.name}:</h3>
 
@@ -80,9 +87,12 @@ const Characters = ({ search }) => {
         }}
       >
         <button onClick={() => setPage(page - 1)}>-</button>
-        <p>{page}</p>
+        {Array.from({ length: nbPage }, (_, i) => i + 1).map((page) => {
+          return <button>1</button>;
+        })}
         <button onClick={() => setPage(page + 1)}>+</button>
       </div>
+      ;
       <Modal element={selectedCharacter} onClose={closeModal} />
     </main>
   );
