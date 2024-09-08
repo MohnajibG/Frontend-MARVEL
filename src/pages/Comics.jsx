@@ -65,7 +65,12 @@ const ComicsModal = ({ search }) => {
         {data.map((comic) => {
           return (
             <div className="comic" key={comic._id}>
-              <div onClick={() => openModal(comic)}>
+              <div
+                className="comic"
+                key={comic._id}
+                onClick={() => openModal(comic)}
+              >
+                <h3>{comic.title}</h3>
                 <img
                   src={
                     comic.thumbnail.path ===
@@ -76,7 +81,7 @@ const ComicsModal = ({ search }) => {
                   alt="Characters Marvel"
                 />
               </div>
-              <button className="like">
+              {/* <button className="like">
                 <svg
                   height="32"
                   width="32"
@@ -97,7 +102,7 @@ const ComicsModal = ({ search }) => {
                   <path fill="none" d="M0 0H24V24H0z"></path>
                   <path d="M16.5 3C19.538 3 22 5.5 22 9c0 7-7.5 11-10 12.5C9.5 20 2 16 2 9c0-3.5 2.5-6 5.5-6C9.36 3 11 4 12 5c1-1 2.64-2 4.5-2z"></path>
                 </svg>
-              </button>
+              </button> */}
               {/* /* From Uiverse.io by LilaRest */}
             </div>
           );

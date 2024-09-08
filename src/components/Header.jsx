@@ -11,7 +11,7 @@ const Header = ({ search, setSearch }) => {
 
       <input
         type="text"
-        placeholder="Trouvez Votre Personnage"
+        placeholder="SEARCH"
         value={search}
         onChange={(event) => {
           setSearch(event.target.value);

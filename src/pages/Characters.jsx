@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import image from "../assets/marvel-character.jpeg";
 import loading from "../assets/loading.gif";
 import Modal from "../components/Modal/Modal";
+import Cookies from "js-cookie";
 
 const Characters = ({ search }) => {
   const [data, setData] = useState([]);
@@ -40,12 +41,24 @@ const Characters = ({ search }) => {
 
   return isLoading ? (
     <div className="loading">
-      {" "}
       <h1>...LOADING</h1>
       <img className="loading" src={loading} alt="Loading" />
     </div>
   ) : (
     <main>
+      <div
+        className="pagination"
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          margin: "20px 0",
+        }}
+      >
+        <button onClick={() => setPage(page - 1)}>-</button>
+        <p>{page}</p>
+        <button onClick={() => setPage(page + 1)}>+</button>{" "}
+      </div>
       <div className="characters">
         {data.map((personnage) => (
           <div className="character" key={personnage._id}>
@@ -79,13 +92,7 @@ const Characters = ({ search }) => {
           alignItems: "center",
           margin: "20px 0",
         }}
-      >
-        <button onClick={() => setPage(page - 1)}>-</button>
-        {Array.from({ length: page }, (_, i) => i + 1).map((page) => {
-          return <button>1</button>;
-        })}
-        <button onClick={() => setPage(page + 1)}>+</button>
-      </div>
+      ></div>
       ;
       <Modal element={selectedCharacter} onClose={closeModal} />
     </main>
