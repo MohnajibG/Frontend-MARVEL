@@ -10,6 +10,7 @@ const ComicsModal = ({ search }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedComic, setSelectedComic] = useState(null);
   const [page, setPage] = useState(0);
+
   //Modal
   const openModal = (element) => {
     setSelectedComic(element);

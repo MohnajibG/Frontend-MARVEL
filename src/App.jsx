@@ -8,7 +8,7 @@ import Header from "./components/Header";
 import Home from "./pages/Home";
 import Characters from "./pages/Characters";
 import Comics from "./pages/Comics";
-
+import Character from "./pages/comicsCharacter";
 function App() {
   const [search, setSearch] = useState("");
   return (
@@ -18,6 +18,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/characters" element={<Characters search={search} />} />
         <Route path="/comics" element={<Comics search={search} />} />
+        <Route path="/comics/:characterId" element={<Character />} />
       </Routes>
     </Router>
   );

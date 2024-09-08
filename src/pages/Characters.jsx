@@ -21,18 +21,12 @@ const Characters = ({ search }) => {
     setIsModalOpen(false);
     setSelectedCharacter(null);
   };
-  // const handleChangePage = (direction) => {
-  //   if (direction === "prev" && page > 1) {
-  //     setPage(page - 1);
-  //   } else if (direction === "next") {
-  //     setPage(page + 1);
-  //   }
-  // };
+
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `https://site--backend-marvel--dnxhn8mdblq5.code.run/character?name=${search}&page=${page}`
+          `https://site--backend-marvel--dnxhn8mdblq5.code.run/characters?name=${search}&page=${page}`
         );
         console.log(response.data);
         setData(response.data.results);
@@ -87,7 +81,7 @@ const Characters = ({ search }) => {
         }}
       >
         <button onClick={() => setPage(page - 1)}>-</button>
-        {Array.from({ length: nbPage }, (_, i) => i + 1).map((page) => {
+        {Array.from({ length: page }, (_, i) => i + 1).map((page) => {
           return <button>1</button>;
         })}
         <button onClick={() => setPage(page + 1)}>+</button>

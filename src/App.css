@@ -107,7 +107,6 @@ main {
 }
 .hero .img {
   object-fit: cover;
-  position: absolute;
 }
 
 .hero video {
@@ -146,7 +145,7 @@ main {
 .character div,
 .comic div {
   display: flex;
-  flex-direction: column;
+
   align-items: center;
 
   margin: 5px;
@@ -380,11 +379,15 @@ button.like {
 .modal-close {
   position: absolute;
   z-index: 100;
-  background-color: blue;
+  color: #ed1d24;
+  background-color: rgb(0, 0, 0);
   border: none;
   font-size: 24px;
-  top: 300px;
-  left: 1200px;
+  top: 98px;
+  left: 986px;
+  border: rgba(255, 3, 3, 0.46) 5px solid;
+  border-radius: 5px;
+  box-shadow: 0px 4px 6px rgba(230, 4, 4, 0.984);
 }
 
 .modal-content {
@@ -438,13 +441,13 @@ button.like {
 /* Sur les écrans, quand la largeur de la fenêtre fait au maximum 1280px */
 @media screen and (max-width: 1280px) {
   header {
-    background-color: #ed1d24;
+    background-color: #b10006;
   }
 }
 /* Sur tous types d'écran, quand la largeur de la fenêtre est comprise entre 1024px et 1280px */
 @media all and (min-width: 1024px) and (max-width: 1280px) {
   header {
-    background-color: rgb(114, 3, 3);
+    background-color: rgb(45, 0, 0);
   }
 }
 /* Sur tous types d'écrans orientés verticalement */
@@ -452,6 +455,7 @@ button.like {
   header {
     background-color: #020202;
   }
+
   .characters img {
     width: 100px;
     height: 150px;
