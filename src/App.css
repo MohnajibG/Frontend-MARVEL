@@ -383,8 +383,8 @@ button.like {
   background-color: blue;
   border: none;
   font-size: 24px;
-  top: 5px;
-  left: 12px;
+  top: 300px;
+  left: 1200px;
 }
 
 .modal-content {

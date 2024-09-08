@@ -9,7 +9,7 @@ const ComicsModal = ({ search }) => {
   const [isLoading, setIsLoading] = useState(true);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedComic, setSelectedComic] = useState(null);
-  const [page, setPage] = useState(1);
+  const [page, setPage] = useState(0);
   setPage > 0;
   //Modal
   const openModal = (element) => {
@@ -38,7 +38,7 @@ const ComicsModal = ({ search }) => {
       }
     };
     fetchData();
-  }, [search]);
+  }, [search, page]);
 
   return isLoading ? (
     <div className="loading">

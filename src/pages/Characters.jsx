@@ -10,6 +10,7 @@ const Characters = ({ search }) => {
   const [isLoading, setIsLoading] = useState(true);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedCharacter, setSelectedCharacter] = useState(null);
+  const [page, setPage] = useState(1);
 
   const openModal = (character) => {
     setSelectedCharacter(character);
@@ -25,7 +26,7 @@ const Characters = ({ search }) => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `http://site--backend-marvel--dnxhn8mdblq5.code.run/characters?name=${search}`
+          `http://site--backend-marvel--dnxhn8mdblq5.code.run/characters?name=${search}&page=${page}`
         );
         setData(response.data.results);
         setIsLoading(false);
@@ -34,7 +35,7 @@ const Characters = ({ search }) => {
       }
     };
     fetchData();
-  }, [search]);
+  }, [search, page]);
 
   return isLoading ? (
     <div className="loading">
@@ -68,6 +69,19 @@ const Characters = ({ search }) => {
             </button>
           </div>
         ))}
+      </div>
+      <div
+        className="pagination"
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          margin: "20px 0",
+        }}
+      >
+        <button onClick={() => setPage(page - 1)}>-</button>
+        <p>{page}</p>
+        <button onClick={() => setPage(page + 1)}>+</button>
       </div>
       <Modal element={selectedCharacter} onClose={closeModal} />
     </main>
