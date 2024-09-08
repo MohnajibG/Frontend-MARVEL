@@ -1,0 +1,461 @@
+body {
+  background: rgb(0, 0, 0);
+  color: white;
+  font-family: "Marvel", sans-serif;
+}
+Link {
+  font-style: none;
+}
+
+.no-decoration {
+  text-decoration: none;
+}
+.loading {
+  font-size: 42px;
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+}
+
+/* =======================================================================
+==========================================================================
+=============================  HEADER  ===================================
+==========================================================================
+========================================================================== */
+
+header {
+  background-color: #ed1d24;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+  padding: 5px 50px;
+}
+.header input {
+  border: none;
+  border-radius: 3px;
+  width: 400px;
+  height: 20px;
+}
+
+header img {
+  width: 200px;
+  height: 200px;
+}
+nav {
+  display: flex;
+  gap: 50px;
+}
+nav button {
+  font-family: "Marvel", sans-serif;
+  height: 40px;
+  color: rgb(255, 255, 255);
+  font-size: 40px;
+  font-weight: bolder;
+  border: none;
+  background-color: #ed1d24;
+  border: #ed1d24 solid 2px;
+  border-radius: 3px;
+}
+/* From Uiverse.io by ShrinilDhorda */
+nav button {
+  font-size: 1.2rem;
+  padding: 0.5rem 2rem;
+  border: none;
+  outline: none;
+  border-radius: 0.4rem;
+  cursor: pointer;
+  text-transform: uppercase;
+  background-color: rgb(0, 0, 0);
+  color: rgb(255, 0, 0);
+  font-weight: 700;
+  transition: 0.6s;
+  box-shadow: 0px 0px 60px #000000;
+  -webkit-box-reflect: below 10px
+    linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4));
+}
+
+nav button:active {
+  scale: 0.92;
+}
+
+nav button:hover {
+  background: rgb(151, 4, 4);
+  background: linear-gradient(
+    270deg,
+    rgba(0, 0, 0, 0.681) 0%,
+    rgba(255, 0, 0, 0.873) 60%
+  );
+  color: rgb(0, 0, 0);
+}
+/* =======================================================================
+==========================================================================
+===============================  HERO  ===================================
+==========================================================================
+========================================================================== */
+
+main {
+  font-family: "Marvel", sans-serif;
+  background-color: black;
+}
+.hero {
+  display: flex;
+  flex-direction: column;
+}
+.hero .img {
+  object-fit: cover;
+  position: absolute;
+}
+
+.hero video {
+  position: relative;
+  top: 1100px;
+  left: 700px;
+}
+
+/* =======================================================================
+==========================================================================
+=============================== CHAR/COMIC  ========================
+==========================================================================
+========================================================================== */
+.characters,
+.comics {
+  margin-top: 200px;
+  /* border: green solid 2px; */
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin: 200px 200px;
+}
+.character,
+.comic {
+  /* border: rgb(11, 0, 128) solid 2px; */
+  background-image: url(${comic.thumbnail.path}.${comic.thumbnail.extension}`);
+  background-size: cover;
+  text-overflow: ellipsis;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+
+  color: white;
+}
+.character div,
+.comic div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  margin: 5px;
+  gap: 10px;
+}
+.characters img,
+.comics img {
+  width: 150px;
+  height: 225px;
+  object-fit: cover;
+  border-radius: 15px;
+}
+.characters img:hover,
+.comics img:hover {
+  background-color: #ed1d2449;
+  color: #020202;
+  /* border-radius: 15px 15px 0 0; */
+  transition-delay: 5s;
+}
+.characters p,
+.comics p {
+  width: 200px;
+  height: 250px;
+  white-space: wrap;
+  text-overflow: ellipsis;
+  margin: 20px;
+  text-align: center;
+  overflow: hidden;
+  text-decoration: non;
+}
+.characters h3,
+.comics h3 {
+  color: rgba(255, 0, 0, 0.7357536764705883);
+  font-size: 22px;
+  overflow: hidden;
+  width: 200px;
+
+  text-decoration: none;
+}
+.character-button {
+  height: 30px;
+  color: rgb(255, 255, 255);
+  font-size: 40px;
+  font-weight: bolder;
+  border: none;
+  background-color: #ed1d24;
+  border: #ed1d24 solid 2px;
+  border-radius: 3px;
+}
+/* From Uiverse.io by LilaRest */
+button.like {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 25px 20px 22px;
+  box-shadow: rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  background-color: #000000;
+  border-color: #ff0404;
+  border-style: solid;
+  border-width: 9px;
+  border-radius: 35px;
+  font-size: 25px;
+  cursor: pointer;
+  font-weight: 900;
+  color: rgb(134, 124, 124);
+  font-family: monospace;
+  transition: transform 400ms cubic-bezier(0.68, -0.55, 0.27, 2.5),
+    border-color 400ms ease-in-out, background-color 400ms ease-in-out;
+  word-spacing: -2px;
+  width: 110px;
+  height: 88px;
+}
+
+@keyframes movingBorders {
+  0% {
+    border-color: #fce4e4;
+  }
+
+  50% {
+    border-color: #ffd8d8;
+  }
+
+  90% {
+    border-color: #fce4e4;
+  }
+}
+
+.like:hover {
+  background-color: #eee;
+  transform: scale(105%);
+  animation: movingBorders 3s infinite;
+}
+
+.like svg {
+  margin-right: 11px;
+  fill: rgb(255, 0, 0);
+  transition: opacity 100ms ease-in-out;
+}
+
+.filled {
+  position: absolute;
+  opacity: 0;
+  top: 20px;
+  left: 20px;
+}
+
+@keyframes beatingHeart {
+  0% {
+    transform: scale(1);
+  }
+
+  15% {
+    transform: scale(1.15);
+  }
+
+  30% {
+    transform: scale(1);
+  }
+
+  45% {
+    transform: scale(1.15);
+  }
+
+  60% {
+    transform: scale(1);
+  }
+}
+
+.like:hover .empty {
+  opacity: 0;
+}
+
+.like:hover .filled {
+  opacity: 1;
+  animation: beatingHeart 1.2s infinite;
+}
+
+/* =======================================================================
+==========================================================================
+===============================  MODAL  =============================
+==========================================================================
+========================================================================== */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 1) 12%,
+    rgba(36, 0, 0, 1) 66%,
+    rgb(255, 0, 0) 77%,
+    rgb(125, 4, 4) 82%,
+    rgba(0, 0, 0, 1) 90%
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 5;
+  flex-wrap: wrap;
+}
+
+/* From Uiverse.io by joe-watson-sbf */
+.character-modal-bouton {
+  font-size: 14px;
+  background: transparent;
+  border: none;
+  height: 40px;
+
+  padding: 1em 1.5em;
+  color: #ed1d24;
+
+  text-transform: uppercase;
+  position: relative;
+  transition: 0.5s ease;
+  cursor: pointer;
+}
+
+.character-modal-bouton::before {
+  content: "";
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 0;
+  color: #020202;
+  background-color: #ed1d24;
+  transition: 0.5s ease;
+}
+
+.character-modal-bouton:hover {
+  background-color: #ed1d24;
+  color: #020202;
+  border-radius: 3px 3px 0 0;
+
+  transition-delay: 0.5s;
+}
+
+.character-modal-bouton:hover::before {
+  width: 100%;
+}
+
+.character-modal-bouton::after {
+  content: "";
+  left: 0;
+  bottom: 0;
+  height: 0;
+  width: 100%;
+  background-color: #ff0606;
+  transition: 0.4s ease;
+  z-index: -1;
+}
+
+.character-modal-bouton:hover::after {
+  height: 100%;
+  transition-delay: 0.4s;
+  color: aliceblue;
+}
+
+.modal {
+  position: absolute;
+
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 500px;
+  width: 100%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.modal-close {
+  position: absolute;
+  z-index: 100;
+  background-color: blue;
+  border: none;
+  font-size: 24px;
+  top: 5px;
+  left: 12px;
+}
+
+.modal-content {
+  margin-top: 20px;
+}
+
+.comics-modal {
+  position: relative;
+
+  padding: 20px;
+  border: rgba(255, 3, 3, 0.46) 5px solid;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  border-radius: 15px;
+  background-color: #020202;
+}
+
+.comics-modal div {
+  gap: 30px;
+}
+.comics-modal img {
+  width: 300px;
+  height: 450px;
+  object-fit: cover;
+  border-radius: 15px;
+}
+
+.comics-modal p {
+  width: 200px;
+  height: 250px;
+  white-space: wrap;
+  margin: 20px;
+  text-align: center;
+}
+
+.comics-modal h2 {
+  color: rgba(255, 0, 0, 0.7357536764705883);
+  font-size: 22px;
+  overflow: hidden;
+  width: 200px;
+  white-space: nowrap;
+  font-weight: bolder;
+}
+/* =======================================================================
+==========================================================================
+===============================  Responsive  =============================
+==========================================================================
+========================================================================== */
+
+/* Sur les écrans, quand la largeur de la fenêtre fait au maximum 1280px */
+@media screen and (max-width: 1280px) {
+  header {
+    background-color: #ed1d24;
+  }
+}
+/* Sur tous types d'écran, quand la largeur de la fenêtre est comprise entre 1024px et 1280px */
+@media all and (min-width: 1024px) and (max-width: 1280px) {
+  header {
+    background-color: rgb(114, 3, 3);
+  }
+}
+/* Sur tous types d'écrans orientés verticalement */
+@media all and (orientation: portrait) {
+  header {
+    background-color: #020202;
+  }
+  .characters img {
+    width: 100px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 15px 0 0 0;
+  }
+}
