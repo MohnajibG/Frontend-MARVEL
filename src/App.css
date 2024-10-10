@@ -99,7 +99,8 @@ nav button:active {
   scale: 0.92;
 }
 
-nav button:hover {
+nav button:hover,
+.header input:hover {
   background: rgb(151, 4, 4);
   background: linear-gradient(
     270deg,
@@ -122,7 +123,8 @@ main {
   display: flex;
   flex-direction: column;
 }
-.hero .img {
+.hero img {
+  margin-top: -280px;
   object-fit: cover;
 }
 
@@ -140,47 +142,43 @@ main {
 .characters,
 .comics {
   margin-top: 200px;
-  /* border: green solid 2px; */
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   gap: 30px;
-  margin: 200px 200px;
+  margin: 200px 100px;
 }
 .character,
 .comic {
   /* border: rgb(11, 0, 128) solid 2px; */
-  background-image: url(${comic.thumbnail.path}.${comic.thumbnail.extension}`);
-  background-size: cover;
+  background-color: #b100061d;
   text-overflow: ellipsis;
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  gap: 15px;
-
-  color: white;
+  gap: 30px;
+  border-radius: 0 15px 0 15px;
 }
 .character div,
 .comic div {
   display: flex;
-  flex-direction: column x;
   align-items: center;
 
-  margin: 5px;
-  gap: 10px;
+  gap: 30px;
 }
 .characters img,
 .comics img {
-  width: 150px;
-  height: 225px;
+  padding: 15px;
+  width: 15vw;
+  height: 80vh;
   object-fit: cover;
   border-radius: 15px;
 }
-.characters img:hover,
-.comics img:hover {
+.character:hover,
+.comic:hover {
   background-color: #ed1d2449;
   color: #020202;
-  /* border-radius: 15px 15px 0 0; */
-  transition-delay: 5s;
+  /* transition-delay: 5s; */
 }
 .characters p,
 .comics p {
