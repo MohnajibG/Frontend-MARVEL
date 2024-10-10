@@ -47,7 +47,7 @@ const ComicsModal = ({ search }) => {
     </div>
   ) : (
     <main>
-      <div
+      {/* <div
         className="pagination"
         style={{
           display: "flex",
@@ -59,7 +59,7 @@ const ComicsModal = ({ search }) => {
         <button onClick={() => setPage(page - 1)}>-</button>
         <p>{page}</p>
         <button onClick={() => setPage(page + 1)}>+</button>
-      </div>
+      </div> */}
       <div className="comics">
         {data.map((comic) => {
           return (

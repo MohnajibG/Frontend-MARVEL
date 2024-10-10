@@ -37,29 +37,6 @@ const Home = () => {
         </video>
         <img src={heroImage} alt="" />
       </div>
-      {/* <div className="characters">
-        {data.results.map((personnage, _id) => (
-          <Link to={`/comics/${personnage._id}`}>
-            <div className="character" key={personnage._id}>
-              <div>
-                <h3>{personnage.name}</h3>
-
-                <img
-                  src={
-                    personnage.thumbnail &&
-                    personnage.thumbnail.path ===
-                      "https://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available"
-                      ? "./src/assets/marvel-character.jpeg"
-                      : `${personnage.thumbnail.path}.${personnage.thumbnail.extension}`
-                  }
-                  alt="Characters Marvel"
-                />
-              </div>
-              <p>{personnage.description || "Aucune description disponible"}</p>
-            </div>
-          </Link>
-        ))}
-      </div> */}
     </main>
   );
 };

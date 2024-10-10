@@ -141,16 +141,15 @@ main {
 ========================================================================== */
 .characters,
 .comics {
-  margin-top: 200px;
+  margin-top: -200px;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   gap: 30px;
-  margin: 200px 100px;
+  margin: 20px 100px;
 }
 .character,
 .comic {
-  /* border: rgb(11, 0, 128) solid 2px; */
   background-color: #b100061d;
   text-overflow: ellipsis;
   display: flex;
@@ -210,93 +209,42 @@ main {
   border: #ed1d24 solid 2px;
   border-radius: 3px;
 }
-/* From Uiverse.io by LilaRest */
-/* button.like {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 20px 20px 20px 20px;
-  box-shadow: rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
-  background-color: #000000;
-  border-color: #ff0404;
-  border-style: solid;
-  border-width: 2px;
-  border-radius: 35px;
-  font-size: 25px;
+/* =======================================================================
+==========================================================================
+===============================  MODAL  =============================
+==========================================================================
+========================================================================== */
+.favorites-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.favorite-card {
+  padding: 10px;
+  background-color: #f4f4f4;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.favorite-card img {
+  width: 100%;
+  border-radius: 5px;
+}
+
+.favorite-card button {
+  margin-top: 10px;
+  padding: 5px 10px;
+  background-color: #ff4f4f;
+  color: white;
+  border: none;
+  border-radius: 5px;
   cursor: pointer;
-  font-weight: 900;
-  color: rgb(134, 124, 124);
-  font-family: monospace;
-  transition: transform 400ms cubic-bezier(0.68, -0.55, 0.27, 2.5),
-    border-color 400ms ease-in-out, background-color 400ms ease-in-out;
-  word-spacing: -2px;
-  width: 110px;
-  height: 88px;
 }
 
-@keyframes movingBorders {
-  0% {
-    border-color: #fce4e4;
-  }
-
-  50% {
-    border-color: #ffd8d8;
-  }
-
-  90% {
-    border-color: #fce4e4;
-  }
+.favorite-card button:hover {
+  background-color: #ff3333;
 }
-
-.like:hover {
-  background-color: #eee;
-  transform: scale(105%);
-  animation: movingBorders 3s infinite;
-}
-
-.like svg {
-  margin-right: 11px;
-  fill: rgb(255, 0, 0);
-  transition: opacity 100ms ease-in-out;
-}
-
-.filled {
-  position: absolute;
-  opacity: 0;
-  top: 20px;
-  left: 20px;
-}
-
-@keyframes beatingHeart {
-  0% {
-    transform: scale(1);
-  }
-
-  15% {
-    transform: scale(1.15);
-  }
-
-  30% {
-    transform: scale(1);
-  }
-
-  45% {
-    transform: scale(1.15);
-  }
-
-  60% {
-    transform: scale(1);
-  }
-}
-
-.like:hover .empty {
-  opacity: 0;
-}
-
-.like:hover .filled {
-  opacity: 1;
-  animation: beatingHeart 1.2s infinite;
-} */
 
 /* =======================================================================
 ==========================================================================

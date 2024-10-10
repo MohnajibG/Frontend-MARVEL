@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import image from "../assets/marvel-character.jpeg";
 import loading from "../assets/loading.gif";
 import Modal from "../components/Modal/Modal";
-import Cookies from "js-cookie";
+import Cookies from "js-cookie"; // Si tu veux utiliser les cookies
 
 const Characters = ({ search }) => {
   const [data, setData] = useState([]);
@@ -12,6 +12,9 @@ const Characters = ({ search }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedCharacter, setSelectedCharacter] = useState(null);
   const [page, setPage] = useState(0);
+  const [favorites, setFavorites] = useState(
+    JSON.parse(localStorage.getItem("favorites")) || []
+  );
 
   const openModal = (character) => {
     setSelectedCharacter(character);
@@ -21,6 +24,28 @@ const Characters = ({ search }) => {
   const closeModal = () => {
     setIsModalOpen(false);
     setSelectedCharacter(null);
+  };
+
+  const addToFavorites = (character) => {
+    // Vérifier si le personnage est déjà dans les favoris
+    const isFavorite = favorites.some((fav) => fav._id === character._id);
+
+    if (!isFavorite) {
+      const updatedFavorites = [...favorites, character];
+      setFavorites(updatedFavorites);
+      localStorage.setItem("favorites", JSON.stringify(updatedFavorites));
+    } else {
+      // Supprimer des favoris si déjà ajouté
+      const updatedFavorites = favorites.filter(
+        (fav) => fav._id !== character._id
+      );
+      setFavorites(updatedFavorites);
+      localStorage.setItem("favorites", JSON.stringify(updatedFavorites));
+    }
+  };
+
+  const isFavorite = (character) => {
+    return favorites.some((fav) => fav._id === character._id);
   };
 
   useEffect(() => {
@@ -46,19 +71,6 @@ const Characters = ({ search }) => {
     </div>
   ) : (
     <main>
-      <div
-        className="pagination"
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          margin: "20px 0",
-        }}
-      >
-        <button onClick={() => setPage(page - 1)}>-</button>
-        <p>{page}</p>
-        <button onClick={() => setPage(page + 1)}>+</button>{" "}
-      </div>
       <div className="characters">
         {data.map((personnage) => (
           <div className="character" key={personnage._id}>
@@ -79,7 +91,18 @@ const Characters = ({ search }) => {
               className="character-modal-bouton"
               onClick={() => openModal(personnage)}
             >
-              informations...
+              Informations...
+            </button>
+            {/* Bouton Ajouter/Retirer des Favoris */}
+            <button
+              className={`favorite-button ${
+                isFavorite(personnage) ? "remove-favorite" : "add-favorite"
+              }`}
+              onClick={() => addToFavorites(personnage)}
+            >
+              {isFavorite(personnage)
+                ? "Remove from Favorites"
+                : "Add to Favorites"}
             </button>
           </div>
         ))}
@@ -93,9 +116,9 @@ const Characters = ({ search }) => {
           margin: "20px 0",
         }}
       ></div>
-      ;
       <Modal element={selectedCharacter} onClose={closeModal} />
     </main>
   );
 };
+
 export default Characters;
