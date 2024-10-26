@@ -8,7 +8,7 @@ Développement d'une application web permettant aux utilisateurs de rechercher d
 
 ## Progression  
 **70%**  
-|█████████████████████████████---------|
+|█████████████████████████████████████--------------|
 
 ---
 
