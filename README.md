@@ -1,8 +1,29 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
+# Projet Personnages et Comics Marvel
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Développement d'une application web permettant aux utilisateurs de rechercher des personnages et des comics Marvel, de consulter leurs détails, et de gérer une liste de favoris.  
+
+**Technologies** : React  
+
+## Progression  
+**70%**  
+|█████████████████████████████---------|
+
+---
+
+## Front-end (React)
+
+### Fonctionnalités
+
+- **Recherche**  
+  Les utilisateurs peuvent rechercher des personnages et des comics Marvel grâce à une barre de recherche intuitive.
+
+- **Pagination**  
+  Résultats de recherche paginés pour une navigation plus fluide, divisant les résultats en plusieurs pages.
+
+- **Modale**  
+  Détails complets de chaque personnage ou comic affichés dans une modale, accessible après la sélection.
+
+- **Favoris**  
+  Possibilité pour les utilisateurs d'ajouter ou de retirer des personnages/comics de leur liste de favoris, stockée localement pour un accès rapide.
